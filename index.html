@@ -244,7 +244,7 @@ button{
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
-  bottom:20px;
+  bottom:80px;
   right:20px;
   background:#25D366;
   padding:14px 18px;
@@ -256,23 +256,17 @@ button{
 
 /* MOBILE CTA */
 .mobile-cta{
-  display:none;
-}
-
-@media(max-width:768px){
-  h2{font-size:38px;}
-  nav{padding:14px 18px;}
-  .mobile-cta{
-    display:block;
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#111;
-    padding:14px;
-    text-align:center;
-    z-index:1000;
-  }
+  display:block;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(10,10,10,0.92);
+  backdrop-filter:blur(10px);
+  padding:12px;
+  text-align:center;
+  z-index:998;
+  border-top:1px solid rgba(255,255,255,0.08);
 }
 </style>
 </head>
