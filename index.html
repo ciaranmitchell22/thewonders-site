@@ -6,568 +6,363 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Wonders | Luxury Wedding Band Ireland</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:Inter,sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000000);
+  color:#fff;
+  overflow-x:hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #050505;
-  color: white;
-  overflow-x: hidden;
-}
-
-/* BACKGROUND GLOW */
-body::before {
-  content: '';
-  position: fixed;
-  width: 900px;
-  height: 900px;
-  background: radial-gradient(circle, rgba(212,175,55,0.12), transparent 70%);
-  top: -300px;
-  right: -200px;
-  z-index: -1;
+/* MORE EYE-CATCHING CINEMATIC GLOW */
+body::before{
+  content:"";
+  position:fixed;
+  width:1000px;
+  height:1000px;
+  background: radial-gradient(circle, rgba(255, 215, 120, 0.18), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(120, 180, 255, 0.08), transparent 50%);
+  top:-300px;
+  right:-300px;
+  z-index:-1;
 }
 
 /* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 24px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 999;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(16px);
+  z-index:999;
+  border-bottom:1px solid rgba(255,215,120,0.1);
 }
 
-.logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
-  letter-spacing: 3px;
+.logo{
+  font-family:Cormorant Garamond;
+  font-size:30px;
+  letter-spacing:4px;
+  color:#ffd98a;
 }
 
-.nav-links {
-  display: flex;
-  gap: 28px;
+nav a{
+  color:rgba(255,255,255,0.75);
+  margin-left:18px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
 }
-
-.nav-links a {
-  text-decoration: none;
-  color: rgba(255,255,255,0.75);
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #d4af37;
-}
+nav a:hover{color:#ffd98a;}
 
 /* HERO */
-.hero {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
 }
 
-.hero video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.25;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.95)),
+    url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2400&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  animation:zoom 18s ease-in-out infinite alternate;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.88));
+@keyframes zoom{
+  from{transform:scale(1)}
+  to{transform:scale(1.07)}
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 950px;
-  padding: 20px;
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  padding:20px;
+  animation:fadeUp 1.4s ease;
 }
 
-.hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(64px, 10vw, 130px);
-  letter-spacing: 8px;
-  line-height: 0.95;
-  margin-bottom: 18px;
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-.hero-sub {
-  color: #d4af37;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 14px;
-  margin-bottom: 30px;
+.hero h1{
+  font-family:Cormorant Garamond;
+  font-size:clamp(56px,8vw,120px);
+  letter-spacing:6px;
+  color:#fff;
 }
 
-.hero p {
-  max-width: 720px;
-  margin: auto;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.8);
-  font-size: 18px;
+.hero p{
+  margin-top:18px;
+  color:rgba(255,255,255,0.85);
+  line-height:1.8;
+  font-size:18px;
 }
 
-.hero-buttons {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+.cta{
+  margin-top:35px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
-.btn {
-  padding: 16px 34px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+.btn{
+  padding:14px 30px;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-.btn-gold {
-  background: linear-gradient(135deg, #f0d67d, #c99a28);
-  color: black;
-  box-shadow: 0 15px 40px rgba(212,175,55,0.25);
+.btn-gold{
+  background:linear-gradient(135deg,#ffe08a,#ffb347,#c98a1a);
+  color:#000;
+  box-shadow:0 20px 60px rgba(255,200,80,0.25);
 }
 
-.btn-dark {
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  background: rgba(255,255,255,0.04);
+.btn-outline{
+  border:1px solid rgba(255,255,255,0.25);
+  color:#fff;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-}
+.btn:hover{transform:translateY(-3px);}
 
 /* SECTIONS */
-section {
-  padding: 120px 24px;
+section{
+  padding:110px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+section.show{opacity:1;transform:translateY(0);}
+.container{max-width:1100px;margin:auto;}
+
+h2{
+  font-family:Cormorant Garamond;
+  font-size:56px;
+  text-align:center;
+  margin-bottom:18px;
+  color:#ffd98a;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
+.sub{
+  text-align:center;
+  max-width:780px;
+  margin:auto;
+  color:rgba(255,255,255,0.78);
+  line-height:1.9;
 }
 
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 62px;
-  text-align: center;
-  margin-bottom: 22px;
+/* GRID */
+.grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
 }
 
-.section-sub {
-  text-align: center;
-  max-width: 760px;
-  margin: auto auto 60px;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.9;
-  font-size: 17px;
+.card{
+  padding:32px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,215,120,0.12);
+  border-radius:18px;
+  transition:0.4s;
 }
 
-/* FEATURE CARDS */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 24px;
-  padding: 40px 30px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(212,175,55,0.25);
-}
-
-.card h3 {
-  margin-bottom: 14px;
-  font-size: 22px;
-}
-
-.card p {
-  color: rgba(255,255,255,0.7);
-  line-height: 1.8;
+.card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(255,215,120,0.35);
 }
 
 /* VIDEO */
-.video-wrap {
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.7);
-  border: 1px solid rgba(212,175,55,0.15);
+.video{
+  margin-top:60px;
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 40px 120px rgba(0,0,0,0.6);
 }
 
-.video-wrap iframe {
-  width: 100%;
-  height: 620px;
-  border: none;
+.video iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
 }
 
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
+/* BOOKING */
+.form{
+  max-width:720px;
+  margin:auto;
+  padding:42px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,215,120,0.15);
+  border-radius:22px;
+  backdrop-filter:blur(10px);
 }
 
-.gallery img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: 0.4s;
+input,textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  background:rgba(255,255,255,0.05);
+  border:none;
+  color:#fff;
+  border-radius:10px;
 }
 
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* TESTIMONIAL */
-.quote {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.7;
-  font-family: 'Cormorant Garamond', serif;
-  color: rgba(255,255,255,0.92);
-}
-
-.quote span {
-  display: block;
-  margin-top: 24px;
-  color: #d4af37;
-  font-size: 16px;
-  letter-spacing: 2px;
-}
-
-/* FORM */
-.form-wrap {
-  max-width: 760px;
-  margin: auto;
-  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 30px;
-  padding: 50px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-input,
-textarea {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 18px;
-  border-radius: 14px;
-  color: white;
-  font-size: 15px;
-}
-
-textarea {
-  min-height: 160px;
-}
-
-button {
-  padding: 18px;
-  border: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #f0d67d, #c99a28);
-  color: black;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
+button{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ffe08a,#ffb347,#c98a1a);
+  font-weight:800;
+  cursor:pointer;
 }
 
 /* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  background: #25D366;
-  color: white;
-  text-decoration: none;
-  padding: 16px 22px;
-  border-radius: 999px;
-  font-weight: 600;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
-  z-index: 999;
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:14px 18px;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+  z-index:999;
 }
 
-/* FOOTER */
-footer {
-  padding: 60px 24px;
-  text-align: center;
-  color: rgba(255,255,255,0.45);
-  border-top: 1px solid rgba(255,255,255,0.05);
+/* MOBILE CTA */
+.mobile-cta{
+  display:none;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  nav {
-    padding: 18px 20px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .section-title {
-    font-size: 46px;
-  }
-
-  .video-wrap iframe {
-    height: 300px;
-  }
-
-  .form-wrap {
-    padding: 28px;
+@media(max-width:768px){
+  h2{font-size:38px;}
+  nav{padding:14px 18px;}
+  .mobile-cta{
+    display:block;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#111;
+    padding:14px;
+    text-align:center;
+    z-index:1000;
   }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">THE WONDERS</div>
-
-  <div class="nav-links">
+  <div>
     <a href="#about">About</a>
     <a href="#live">Live</a>
-    <a href="#gallery">Gallery</a>
     <a href="#book">Enquire</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-
- <div style="
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.88)),
-    url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1800&auto=format&fit=crop');
-  background-size:cover;
-  background-position:center;
-">
-</div>
-
-  <div class="hero-overlay"></div>
-
   <div class="hero-content">
-    <div class="hero-sub">Luxury Wedding Entertainment</div>
+    <h1>THE WONDERS</h1>
+    <p>Luxury Wedding Band Ireland — cinematic live energy, packed dancefloors & unforgettable moments.</p>
 
-    <h1>THE<br>WONDERS</h1>
-
-    <p>
-      A premium Irish wedding band delivering unforgettable live music experiences,
-      elegant atmosphere and packed dancefloors from the first dance to the final song.
-    </p>
-
-    <div class="hero-buttons">
+    <div class="cta">
       <a href="#book" class="btn btn-gold">Check Availability</a>
-      <a href="#live" class="btn btn-dark">Watch Live</a>
+      <a href="#live" class="btn btn-outline">Watch Live</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
+    <h2>Making Your Special Day Truly Unforgettable</h2>
 
-    <h2 class="section-title">Making Your Day Unforgettable</h2>
-
-    <p class="section-sub">
-      With over 25 years of combined experience performing across Ireland’s leading wedding
-      and corporate bands, The Wonders combine elite musicianship with a modern, energetic edge.
-      Every wedding is tailored around your atmosphere, your guests and your vision.
+    <p class="sub">
+      With over 25 years of combined experience as session musicians in Ireland’s top wedding and corporate bands, The Wonders have come together to create something new — a band that blends musical expertise with a fresh, modern edge. The result? An unforgettable experience customised to your big day.
     </p>
 
-    <div class="features">
-
+    <div class="grid">
       <div class="card">
-        <h3>Live Wedding Band</h3>
-        <p>High-energy live sets designed to keep your dancefloor full all night long.</p>
+        Tailored music for every moment — from ceremony elegance to full dancefloor energy.
       </div>
-
       <div class="card">
-        <h3>Ceremony Music</h3>
-        <p>Elegant acoustic performances for ceremonies, drinks receptions and dinners.</p>
+        High-energy party sets that keep the dancefloor buzzing all night.
       </div>
-
       <div class="card">
-        <h3>Professional DJ</h3>
-        <p>Seamless late-night DJ service to keep the celebration going into the early hours.</p>
+        Seamless late-night DJ service to keep the energy going well into the night.
       </div>
-
     </div>
-
   </div>
 </section>
 
-<!-- VIDEO -->
 <section id="live">
   <div class="container">
+    <h2>Live Performance</h2>
 
-    <h2 class="section-title">See The Atmosphere</h2>
-
-    <p class="section-sub">
-      Real weddings. Real energy. Real dancefloors.
-    </p>
-
-    <div style="
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-      border: 1px solid rgba(212,175,55,0.2);
-    ">
-
-      <iframe
-        src="https://www.youtube.com/embed/SaVArE4wvvw"
-        title="The Wonders Live"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="
-          position:absolute;
-          top:0;
-          left:0;
-          width:100%;
-          height:100%;
-        ">
-      </iframe>
-
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/SaVArE4wvvw" allowfullscreen></iframe>
     </div>
-
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-
-    <h2 class="section-title">Live Moments</h2>
-
-    <p class="section-sub">
-      Replace these sample images with your own wedding photos.
-    </p>
-
-    <div class="gallery">
-
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Wedding">
-
-      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop" alt="Wedding Band">
-
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="Wedding Party">
-
-      <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?q=80&w=1200&auto=format&fit=crop" alt="Wedding Reception">
-
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop" alt="Wedding Music">
-
-      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Wedding Dancefloor">
-
-    </div>
-
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section>
-  <div class="container">
-
-    <div class="quote">
-      “The dancefloor was packed all night. The atmosphere they created was unbelievable — our guests are still talking about it months later.”
-      <span>— Recent Wedding Couple</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- BOOKING -->
 <section id="book">
   <div class="container">
+    <h2>Check Availability</h2>
 
-    <h2 class="section-title">Check Availability</h2>
-
-    <p class="section-sub">
-      Tell us about your wedding and we’ll get back to you quickly.
-    </p>
-
-    <div class="form-wrap">
-
-      <form name="wedding-enquiry" method="POST" data-netlify="true">
-
-        <input type="hidden" name="form-name" value="wedding-enquiry">
-
-        <input type="text" name="name" placeholder="Your Name" required>
-
+    <div class="form">
+      <form name="enquiry" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="enquiry">
+        <input type="text" name="name" placeholder="Name" required>
         <input type="text" name="date" placeholder="Wedding Date" required>
-
-        <input type="text" name="venue" placeholder="Venue / Location">
-
+        <input type="text" name="venue" placeholder="Venue">
         <textarea name="message" placeholder="Tell us about your wedding"></textarea>
-
         <button type="submit">Send Enquiry</button>
-
       </form>
-
     </div>
-
   </div>
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp"
-   href="https://wa.me/353864021334?text=Hi%20The%20Wonders%2C%20I%20want%20to%20check%20availability"
-   target="_blank">
-  💬 WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/353864021334">💬 WhatsApp</a>
 
-<!-- FOOTER -->
-<footer>
-  © 2026 The Wonders Wedding Band • Ireland
-</footer>
+<div class="mobile-cta">
+  <a href="#book" class="btn btn-gold">Check Availability</a>
+</div>
+
+<script>
+const sections=document.querySelectorAll('section');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('show');}
+  });
+},{threshold:0.15});
+sections.forEach(s=>obs.observe(s));
+</script>
 
 </body>
 </html>
